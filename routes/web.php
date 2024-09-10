@@ -29,6 +29,12 @@ Route::middleware('auth')->group(function () {
     ->name('tweet.delete');
 });
 
+Route::prefix('/user')->group(function () {
+    Route::group(['middleware' => ['auth', 'can:admin']], function () {
+        Route::get('/admin', \App\Http\Controllers\User\AdminController::class)
+        ->name('admin.index');
+    });
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
