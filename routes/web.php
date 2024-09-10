@@ -30,8 +30,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::prefix('tweet/user')->group(function () {
+    // Route::get('tweet/index', \App\Http\Controllers\Tweet\IndexController::class);
     Route::group(['middleware' => ['auth', 'can:admin']], function () {
-        Route::get('/admin', \App\Http\Controllers\User\AdminController::class)
+        Route::get('admin', \App\Http\Controllers\User\AdminController::class)
         ->name('tweet.admin.index');
     });
 });
