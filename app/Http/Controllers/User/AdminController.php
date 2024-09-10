@@ -5,16 +5,18 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Services\TweetService;
 use Illuminate\Http\Request;
+use App\Services\UserService;
 
 class AdminController extends Controller
 {
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request, TweetService $tweetService)
+    public function __invoke(Request $request, UserService $userService)
     {
-        $tweets = $tweetService->getTweets(); // つぶやきの一覧を取得
+        $users = $userService->getUsers(); // ユーザーの一覧を取得
+        //dd(($users));
         return view('admin.index')
-            ->with('tweets', $tweets);
+            ->with('users', $users);
     }
 }
