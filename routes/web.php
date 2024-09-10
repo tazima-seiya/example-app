@@ -29,10 +29,10 @@ Route::middleware('auth')->group(function () {
     ->name('tweet.delete');
 });
 
-Route::prefix('/user')->group(function () {
+Route::prefix('tweet/user')->group(function () {
     Route::group(['middleware' => ['auth', 'can:admin']], function () {
         Route::get('/admin', \App\Http\Controllers\User\AdminController::class)
-        ->name('admin.index');
+        ->name('tweet.admin.index');
     });
 });
 
