@@ -16,15 +16,26 @@ class PutController extends Controller
      */
     public function __invoke(UpdateRequest $request, TweetService $tweetService)
     {
-        if (!$tweetService->checkOwnTweet($request->user()->id, $request->id()))
+        // if (!$tweetService->checkOwnTweet($request->user()->id, $request->id()))
+        // {
+        //     throw new AccessDeniedHttpException();
+        // }
+        // $tweet = Tweet::where('id', $request->id())->firstOrFail();
+        // $tweet->content = $request->tweet();
+        // $tweet->save();
+        // return redirect()
+        //     ->route('tweet.update.index', ['tweetId' => $tweet->id])
+        //     ->with('feedback.success', "つぶやきを編集しました");
+
+        if ($tweetService->checkOwnTweet($request->user()->id, $request->id()) || $request->user()->role === 10)
         {
-            throw new AccessDeniedHttpException();
+            $tweet = Tweet::where('id', $request->id())->firstOrFail();
+            $tweet->content = $request->tweet();
+            $tweet->save();
+            return redirect()
+                ->route('tweet.update.index', ['tweetId' => $tweet->id])
+                ->with('feedback.success', "つぶやきを編集しました");
         }
-        $tweet = Tweet::where('id', $request->id())->firstOrFail();
-        $tweet->content = $request->tweet();
-        $tweet->save();
-        return redirect()
-            ->route('tweet.update.index', ['tweetId' => $tweet->id])
-            ->with('feedback.success', "つぶやきを編集しました");
+        throw new AccessDeniedHttpException();
     }
 }
