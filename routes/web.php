@@ -35,6 +35,8 @@ Route::middleware('auth')->group(function () {
     ->name('user.update.index');
     Route::put('/tweet/user/update/{userId}', \App\Http\Controllers\User\PutController::class)
     ->name('user.update.put');
+    Route::delete('/tweet/user/delete/{userId}', \App\Http\Controllers\User\DeleteController::class)
+    ->name('user.delete');
 });
 
 Route::group(['middleware' => ['auth', 'can:admin']], function () {

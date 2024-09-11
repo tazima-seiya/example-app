@@ -2,13 +2,27 @@
     <ul>
         @foreach ($users as $user)
             <li>
-                <div>
+                <h3>
                     {{ $user->name . " | " . $user->email }}
-                </div>
+                </h3>
                 <div>
-                    <a href="{{ route('user.update.index', ['userId' => $user->id]) }}">
-                        編集
-                    </a>
+                    @if($user->role === 1)
+                    <div>
+                        <a href="{{ route('user.update.index', ['userId' => $user->id]) }}">
+                            編集
+                        </a>
+                    </div>
+                    <div>
+                        <form action="{{ route('user.delete', ['userId' => $user->id]) }}"
+                            method="POST" onclick="return confirm('削除してもよろしいでしょうか？');">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit">
+                                削除
+                            </button>
+                        </form>
+                    </div>
+                    @endif
                 </div>
                 <div class="bg-white rounded-md shadow-lg mt-5 mb-5">
                     @php
