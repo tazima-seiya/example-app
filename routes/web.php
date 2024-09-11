@@ -31,8 +31,10 @@ Route::middleware('auth')->group(function () {
 
 // User
 Route::middleware('auth')->group(function () {
-    Route::get('/tweet/user/{userId}', \App\Http\Controllers\User\IndexController::class)
-    ->name('user.index');
+    Route::get('/tweet/user/update/{userId}', \App\Http\Controllers\User\IndexController::class)
+    ->name('user.update.index');
+    Route::put('/tweet/user/update/{userId}', \App\Http\Controllers\User\PutController::class)
+    ->name('user.update.put');
 });
 
 Route::group(['middleware' => ['auth', 'can:admin']], function () {
