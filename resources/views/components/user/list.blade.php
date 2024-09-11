@@ -1,3 +1,6 @@
+@props([
+    'users'
+])
 <div>
     <ul>
         @foreach ($users as $user)
