@@ -29,12 +29,15 @@ Route::middleware('auth')->group(function () {
     ->name('tweet.delete');
 });
 
-Route::prefix('tweet/user')->group(function () {
-    // Route::get('tweet/index', \App\Http\Controllers\Tweet\IndexController::class);
-    Route::group(['middleware' => ['auth', 'can:admin']], function () {
-        Route::get('admin', \App\Http\Controllers\User\AdminController::class)
-        ->name('tweet.admin.index');
-    });
+// User
+Route::middleware('auth')->group(function () {
+    Route::get('/tweet/user/{userId}', \App\Http\Controllers\User\IndexController::class)
+    ->name('user.index');
+});
+
+Route::group(['middleware' => ['auth', 'can:admin']], function () {
+    Route::get('/tweet/admin', \App\Http\Controllers\User\AdminController::class)
+    ->name('tweet.admin.index');
 });
 
 Route::get('/dashboard', function () {

@@ -20,8 +20,8 @@
                             </div>
                             <div>
                                 {{-- 編集と削除 --}}
-                                <x-tweet.admin.options :tweetId="$tweet->id" :userId="$tweet->user_id">
-                                </x-tweet.admin.options>
+                                {{-- <x-tweet.admin.options :tweetId="$tweet->id" :userId="$tweet->user_id">
+                                </x-tweet.admin.options> --}}
                             </div>
                         </li>
                     @endforeach

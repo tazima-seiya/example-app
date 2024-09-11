@@ -1,0 +1,13 @@
+<x-layout title="ユーザー編集 | つぶやきアプリ">
+    <x-layout.single>
+        <h2 class="text-center text-blue-500 text-4xl font-bold mt-8 mb-8">
+            つぶやきアプリ
+        </h2>
+        <div>
+            {{ $user->name }}
+        </div>
+        <div>
+            {{ $user->email }}
+        </div>
+    </x-layout.single>
+</x-layout>
