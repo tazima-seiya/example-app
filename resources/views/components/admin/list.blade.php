@@ -12,8 +12,8 @@
                     @if($user->role === 1)
                     <div>
                         {{-- 編集と削除 --}}
-                        <x-user.options :userId="$user->id">
-                        </x-user.options>
+                        <x-admin.user.options :userId="$user->id">
+                        </x-admin.user.options>
                     </div>
                     @endif
                 </div>
@@ -33,8 +33,8 @@
                                     {!! nl2br(e($tweet->content)) !!}
                                 </div>
                                 <div>
-                                    <x-tweet.options-admin :tweetId="$tweet->id" :userId="$tweet->user_id">
-                                    </x-tweet.options-admin>
+                                    <x-admin.tweet.options :tweetId="$tweet->id" :userId="$tweet->user_id">
+                                    </x-admin.tweet.options>
                                 </div>
                             </li>
                         @endforeach
