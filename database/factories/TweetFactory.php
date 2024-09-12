@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,7 +19,7 @@ class TweetFactory extends Factory
     {
         return [
             //
-            'user_id' => 1, // つぶやきを投稿したユーザーのIDをデフォルトで1とする
+            'user_id' => User::max('id'), // つぶやきを投稿したユーザーのIDをデフォルトで1とする
             'content' => $this->faker->realText(100)
         ];
     }
