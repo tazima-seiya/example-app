@@ -1,15 +1,15 @@
 @props([
     'users'
 ])
-<div>
+<div class="bg-white p-2 rounded-md shadow-lg mt-5 mb-5>
     <ul>
         @foreach ($users as $user)
-            <li>
+            <li">
                 <div class="border-gray-200 flex items-start justify-between">
-                    @if($user->role === 1)
                     <div>
                         {{ $user->name . " | " . $user->email }}
                     </div>
+                    @if($user->role === 1)
                     <div>
                         {{-- 編集と削除 --}}
                         <x-admin.user.options :userId="$user->id">
@@ -17,7 +17,7 @@
                     </div>
                     @else
                     <div>
-                        {{ $user->name . " | " . $user->email . " (管理者)"}}
+                        管理者
                     </div>
                     @endif
                 </div>

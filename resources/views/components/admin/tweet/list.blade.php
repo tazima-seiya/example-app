@@ -1,14 +1,16 @@
 @props(['user'])
-<div class="bg-white rounded-md shadow-lg mt-5 mb-5">
+<div class="bg-blue-100 rounded-md shadow-lg mt-5 mb-5">
     @php
         $tweets = $user->tweets()->get();
     @endphp
     <details>
-        <summary class="p-1 pl-4">
+        <summary class="p-1 pl-4 bg-blue-200 rounded-md">
             つぶやき一覧
         </summary>
         @if (count($tweets) === 0)
-            <p class="text-red-400 p-4 flex items-start justify-between">つぶやきが見つかりません</p>
+            <p class="text-red-400 p-4 flex items-start justify-between">
+                つぶやきが見つかりません
+            </p>
         @else
         <ul>
         @foreach ($tweets as $tweet)
