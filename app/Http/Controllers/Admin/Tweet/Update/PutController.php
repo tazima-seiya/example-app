@@ -16,7 +16,7 @@ class PutController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request)
+    public function __invoke(UpdateRequest $request)
     {
         if (!Gate::allows('admin', Auth::user()))
         {

@@ -1,7 +1,7 @@
 @props([
     'users'
 ])
-<div class="bg-white p-2 rounded-md shadow-lg mt-5 mb-5>
+<div class="bg-white p-2 rounded-md shadow-lg mt-5 mb-5">
     <ul>
         @foreach ($users as $user)
             <li">
