@@ -6,12 +6,12 @@
         @php
             $breadcrumbs = [
                 ['href' => route('tweet.index'), 'label' => 'TOP'],
-                ['href' => route('tweet.admin.index'), 'label' => '管理者ページ'],
+                ['href' => route('admin.tweet.index'), 'label' => '管理者ページ'],
                 ['href' => '#', 'label' => 'ユーザー情報編集']
             ];
         @endphp
         <x-element.breadcrumbs :breadcrumbs="$breadcrumbs"/>
-        <form action="{{ route('user.update.put', ['userId' => $user->id]) }}", method="POST">
+        <form action="{{ route('admin.user.update.put', ['userId' => $user->id]) }}", method="POST">
             @method('PUT')
             @csrf
             <div>

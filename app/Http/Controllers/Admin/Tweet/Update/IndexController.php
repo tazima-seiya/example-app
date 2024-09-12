@@ -22,6 +22,6 @@ class IndexController extends Controller
         }
 
         $tweet = Tweet::where('id', $tweetId)->firstOrFail();
-        return view('tweet.update')->with('tweet', $tweet);
+        return view('admin.tweet.update')->with('tweet', $tweet);
     }
 }

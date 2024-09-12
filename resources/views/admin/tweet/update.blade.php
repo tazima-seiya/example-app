@@ -6,7 +6,8 @@
         @php
             $breadcrumbs = [
                 ['href' => route('tweet.index'), 'label' => 'TOP'],
-                ['href' => '#', 'label' => '編集']
+                ['href' => route('admin.tweet.index'), 'label' => '管理者ページ'],
+                ['href' => '#', 'label' => 'ユーザー情報編集']
             ];
         @endphp
         <x-element.breadcrumbs :breadcrumbs="$breadcrumbs">

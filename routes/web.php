@@ -32,16 +32,18 @@ Route::middleware('auth')->group(function () {
 // User
 Route::middleware('auth')->group(function () {
     Route::get('/tweet/user/update/{userId}', \App\Http\Controllers\Admin\User\IndexController::class)
-    ->name('user.update.index');
+    ->name('admin.user.update.index');
     Route::put('/tweet/user/update/{userId}', \App\Http\Controllers\Admin\User\PutController::class)
-    ->name('user.update.put');
+    ->name('admin.user.update.put');
     Route::delete('/tweet/user/delete/{userId}', \App\Http\Controllers\Admin\User\DeleteController::class)
-    ->name('user.delete');
+    ->name('admin.user.delete');
 });
 
 Route::group(['middleware' => ['auth', 'can:admin']], function () {
     Route::get('/tweet/admin', \App\Http\Controllers\Admin\AdminController::class)
-    ->name('tweet.admin.index');
+    ->name('admin.tweet.index');
+    Route::get('/tweet/admin/update/{userId}', \App\Http\Controllers\Admin\Tweet\Update\IndexController::class)
+    ->name('admin.tweet.update.index');
 });
 
 Route::get('/dashboard', function () {

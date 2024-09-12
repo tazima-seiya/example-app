@@ -23,7 +23,7 @@ class IndexController extends Controller
         $userId = (int)$request->route('userId');
         $user = User::where('id', $userId)->firstOrFail();
 
-        return view('admin.update')
+        return view('admin.user.update')
             ->with('user', $user);
     }
 }
