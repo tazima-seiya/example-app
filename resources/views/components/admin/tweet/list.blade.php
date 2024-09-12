@@ -4,7 +4,7 @@
         $tweets = $user->tweets()->get();
     @endphp
     <details>
-        <summary class="p-1">
+        <summary class="p-1 pl-4">
             つぶやき一覧
         </summary>
         @if (count($tweets) === 0)
