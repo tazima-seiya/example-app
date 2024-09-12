@@ -28,7 +28,7 @@ class PutController extends Controller
         $user->email = $request->email() ?? $user->email;
         $user->save();
         return redirect()
-            ->route('user.update.index', ['userId' => $user->id])
+            ->route('admin.user.update.index', ['userId' => $user->id])
             ->with('feedback.success', "ユーザー情報を編集しました");
     }
 }

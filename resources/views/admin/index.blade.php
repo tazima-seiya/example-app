@@ -9,7 +9,7 @@
                 トップへ
             </x-element.button-a>
         </div>
-        <x-admin.list :users="$users"></x-admin.list>
+        <x-admin.user.list :users="$users"/>
     </x-layout.single>
 </x-layout>
 @endcan

@@ -12,6 +12,6 @@
         @endphp
         <x-element.breadcrumbs :breadcrumbs="$breadcrumbs">
         </x-element.breadcrumbs>
-        <x-tweet.form.put :tweet="$tweet"></x-tweet.form.put>
+        <x-admin.tweet.form.put :tweet="$tweet"></x-admin.tweet.form.put>
     </x-layout.single>
 </x-layout>

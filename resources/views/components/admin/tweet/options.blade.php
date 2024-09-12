@@ -7,7 +7,7 @@
     </summary>
     <div class="bg-white rounded shadow-md absolute right-0 w-24 z-20 pt-1 pb-1">
         <div>
-            <a href="{{ route('admin.tweet.update.index', ['userId' => $userId]) }}"
+            <a href="{{ route('admin.tweet.update.index', ['tweetId' => $tweetId]) }}"
             class="flex items-center pt-1 pb-1 pl-3 pr-3 hover:bg-gray-100">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
                 viewBox="0 0 20 20" fill="currentColor">
@@ -20,7 +20,7 @@
             </a>
         </div>
         <div>
-            <form action="{{ route('admin.user.delete', ['userId' => $userId]) }}"
+            <form action="{{ route('admin.tweet.delete', ['tweetId' => $tweetId]) }}"
                 method="POST" onclick="return confirm('削除してもよろしいでしょうか？');">
                 @method('DELETE')
                 @csrf

@@ -14,6 +14,9 @@
         <form action="{{ route('admin.user.update.put', ['userId' => $user->id]) }}", method="POST">
             @method('PUT')
             @csrf
+            @if (session('feedback.success'))
+                <x-alert.success>{{ session('feedback.success') }}</x-alert.success>
+            @endif
             <div>
                 <label for="name">名前</label>
             </div>

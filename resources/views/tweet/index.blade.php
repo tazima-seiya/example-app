@@ -1,7 +1,7 @@
 <x-layout title="TOP | つぶやきアプリ">
     <x-layout.single>
         @can('admin')
-            <x-element.button-a : href="{{ route('tweet.admin.index') }}">
+            <x-element.button-a : href="{{ route('admin.tweet.index') }}">
                 管理者
             </x-element.button-a>
         @endcan

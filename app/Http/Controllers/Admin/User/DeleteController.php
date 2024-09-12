@@ -24,7 +24,7 @@ class DeleteController extends Controller
         $user = User::where('id', $userId)->firstOrFail();
         $user->delete();
         return redirect()
-            ->route('tweet.admin.index')
+            ->route('admin.tweet.index')
             ->with('feedback.success', "ユーザーを削除しました");
     }
 }
