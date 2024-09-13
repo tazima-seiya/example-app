@@ -12,10 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('tweets', function (Blueprint $table) {
+            //$table->dropForeign(['user_id']);
             $table->unsignedBigInteger('user_id')->after('id');
 
             // usersテーブルのidカラムにuser_idカラムを関連付けます。
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

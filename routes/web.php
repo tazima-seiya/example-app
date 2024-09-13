@@ -29,6 +29,26 @@ Route::middleware('auth')->group(function () {
     ->name('tweet.delete');
 });
 
+// User
+Route::middleware('auth')->group(function () {
+    Route::get('/tweet/admin/user/update/{userId}', \App\Http\Controllers\Admin\User\IndexController::class)
+    ->name('admin.user.update.index');
+    Route::put('/tweet/admin/user/update/{userId}', \App\Http\Controllers\Admin\User\PutController::class)
+    ->name('admin.user.update.put');
+    Route::delete('/tweet/admin/user/delete/{userId}', \App\Http\Controllers\Admin\User\DeleteController::class)
+    ->name('admin.user.delete');
+});
+
+Route::group(['middleware' => ['auth', 'can:admin']], function () {
+    Route::get('/tweet/admin', \App\Http\Controllers\Admin\AdminController::class)
+    ->name('admin.tweet.index');
+    Route::get('/tweet/admin/tweet/update/{tweetId}', \App\Http\Controllers\Admin\Tweet\Update\IndexController::class)
+    ->name('admin.tweet.update.index');
+    Route::put('/tweet/admin/tweet/update/{tweetId}', \App\Http\Controllers\Admin\Tweet\Update\PutController::class)
+    ->name('admin.tweet.update.put');
+    Route::delete('/tweet/admin/tweet/update/{tweetId}', \App\Http\Controllers\Admin\Tweet\DeleteController::class)
+    ->name('admin.tweet.delete');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
