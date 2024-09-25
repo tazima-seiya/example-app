@@ -1,10 +1,11 @@
 @props(['user'])
-<div class="bg-blue-100 rounded-md shadow-lg mt-5 mb-5">
+<div class="bg-gray-100 rounded-md shadow-lg mt-2 mb-2">
     @php
         $tweets = $user->tweets()->get();
     @endphp
-    <details>
-        <summary class="p-1 pl-4 bg-blue-200 rounded-md">
+    <details class="rounded-md border-2 border-gray-400">
+        {{-- <summary class="p-1 pl-4 bg-blue-200 rounded-md"> --}}
+        <summary class="p-1 pl-4 bg-gray-200 rounded-md text-slate-800">
             つぶやき一覧
         </summary>
         @if (count($tweets) === 0)
