@@ -1,5 +1,5 @@
 @props(['user'])
-<div class="bg-gray-100 rounded-md shadow-lg mt-2 mb-2">
+<div class="bg-gray-100 rounded-md shadow-lg mt-2 mb-0">
     @php
         $tweets = $user->tweets()->get();
     @endphp

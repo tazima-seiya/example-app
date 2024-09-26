@@ -5,7 +5,7 @@
 <div>
     <ul>
         @foreach ($users as $user)
-        <li class="border-transparent px-4 py-2 items-start bg-blue-50 shadow-lg rounded-xl">
+        <li class="border-transparent px-2 py-2 items-start bg-blue-50 shadow-lg rounded-xl">
             <div class="border-gray-200 flex items-start justify-between">
                 <div class="text-slate-700">
                     {{--
