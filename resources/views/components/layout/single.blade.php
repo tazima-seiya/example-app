@@ -10,7 +10,7 @@
                         $isNormalPage = str_starts_with(Request::route()->getName(), "tweet");
                     @endphp
                     @if ($isAdmin && $isNormalPage)
-                        <x-element.button-a : href="{{ route('admin.tweet.index') }}">
+                        <x-element.button-a : href="{{ route('admin.tweet.index') }}" : theme="green">
                             管理者
                         </x-element.button-a>
                     @endif
