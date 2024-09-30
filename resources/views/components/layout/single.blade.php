@@ -16,7 +16,7 @@
                     @endif
                 </div>
                 <button
-                    class="justify-end mt-2 text-sm text-gray-500 hover:text-gray-800 hover:bg-gray-100"
+                    class="justify-end mt-2 text-sm text-gray-500 hover:text-gray-800"
                     onclick="event.preventDefault(); this.closest('form').submit();"
                 >ログアウト</button>
             </div>
