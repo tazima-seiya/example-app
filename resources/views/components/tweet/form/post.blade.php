@@ -1,5 +1,5 @@
 @auth
-<div class="p-4 sticky top-0 max-w-screen-sm w-full bg-gray-50">
+<div class="rounded-md p-4 sticky top-0 max-w-screen-sm w-full bg-gray-50">
     <form action="{{ route('tweet.create') }}" method="post">
         @csrf
         <div class="mt-1">

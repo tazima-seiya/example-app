@@ -8,9 +8,6 @@
         <li class="border-transparent px-2 py-2 items-start bg-blue-50 shadow-lg rounded-xl">
             <div class="border-gray-200 flex items-start justify-between">
                 <div class="text-slate-700">
-                    {{--
-                    {{ $user->name . " | " . $user->email }}
-                     --}}
                     <p class="flex">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 15" fill="currentColor">
                             <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
@@ -24,7 +21,7 @@
                     </p>
                 </div>
                 @if($user->role === 1)
-                <div>
+                <div class="p-1">
                     {{-- 編集と削除 --}}
                     <x-admin.user.options :userId="$user->id">
                     </x-admin.user.options>

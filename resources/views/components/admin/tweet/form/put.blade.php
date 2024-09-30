@@ -1,7 +1,7 @@
 @props([
     'tweet'
 ])
-<div class="p-4">
+<div class="p-4 bg-gray-50">
     <form action="{{ route('admin.tweet.update.put', ['tweetId' => $tweet->id]) }}" method="POST">
         @method('PUT')
         @csrf
