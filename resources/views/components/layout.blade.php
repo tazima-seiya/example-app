@@ -11,7 +11,7 @@
     @stack('css')
 </head>
 <body class="bg-fixed"
-style="background-image:url({{ asset('img/ichimatsu2.png') }})">
+style="background:url({{ asset('img/bg-cross2.png') }})">
     {{ $slot }}
 </body>
 </html>
