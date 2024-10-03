@@ -4,7 +4,7 @@
         <form method="POST" action="{{ route('logout') }}">
             @csrf
             <div class="flex justify-between p-4">
-                <div class="flex justify-start py-4">
+                <div class="flex justify-start">
                     @php
                         $isAdmin = Request::user()->role === 10;
                         $isNormalPage = str_starts_with(Request::route()->getName(), "tweet");

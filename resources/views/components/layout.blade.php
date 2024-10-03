@@ -10,8 +10,7 @@
     <title>{{ $title ?? 'つぶやきアプリ' }}</title>
     @stack('css')
 </head>
-<body class="bg-fixed"
-style="background:url({{ asset('img/bg-cross2.png') }})">
+<body class="bg-fixed" style="background:url({{ asset('img/bg-cross2.png') }})">
     {{ $slot }}
 </body>
 </html>
