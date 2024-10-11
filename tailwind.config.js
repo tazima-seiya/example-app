@@ -12,16 +12,16 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Meiryo", ...defaultTheme.fontFamily.sans],
-                // sans: [
-                //     "BIZ UDGothic",
-                //     "Meiryo",
-                //     "sans-serif",
-                //     "Apple Color Emoji",
-                //     "Segoe UI Emoji",
-                //     "Segoe UI Symbol",
-                //     "Noto Color Emoji",
-                // ],
+                // sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: [
+                    "BIZ UDGothic",
+                    "Meiryo",
+                    "sans-serif",
+                    "Apple Color Emoji",
+                    "Segoe UI Emoji",
+                    "Segoe UI Symbol",
+                    "Noto Color Emoji",
+                ],
             },
         },
     },

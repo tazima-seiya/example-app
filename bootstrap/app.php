@@ -3,7 +3,6 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
-use Illuminate\Http\Request;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -14,8 +13,6 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         //$middleware->append(\App\Http\Middleware\SampleMiddleware::class); // グローバルミドルウェア
         //
-        $middleware->redirectGuestsTo('/login'); // ログインしていない場合の遷移先
-        $middleware->redirectUsersTo('/tweet'); // ログインしていた場合の遷移先
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
