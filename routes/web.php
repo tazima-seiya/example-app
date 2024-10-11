@@ -5,11 +5,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('auth')->middleware('guest');
+
+// Route::get('/welcome', function () {
+//     return view('welcome');
+// })->middleware(\App\Http\Middleware\SampleMiddleware::class); // 個別ミドルウェア
 
 Route::get('/welcome', function () {
     return view('welcome');
-})->middleware(\App\Http\Middleware\SampleMiddleware::class); // 個別ミドルウェア
+});
 
 // Sample
 Route::get('/sample', [\App\Http\Controllers\Sample\IndexController::class, 'show']);
