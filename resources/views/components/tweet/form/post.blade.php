@@ -6,7 +6,7 @@
         </summary>
         <form class="accordion-body" action="{{ route('tweet.create') }}" method="post">
             @csrf
-            <div class="mt-1">
+            <div class="pt-4">
                 <textarea name="tweet" rows="3" id="textarea" limit="140"
                     class="focus:ring-blue-400 focus:border-blue-400 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2"
                     placeholder="つぶやきを入力"></textarea>
