@@ -13,6 +13,8 @@
                         <x-element.button-a : href="{{ route('admin.tweet.index') }}" : theme="green">
                             管理者
                         </x-element.button-a>
+                    @else
+                        {{ Request::user()->name }} でログイン中
                     @endif
                 </div>
                 <button
