@@ -8,7 +8,7 @@ class TweetService
 {
     public function getTweets()
     {
-        return Tweet::orderby('created_at', 'DESC')->get();
+        return Tweet::orderby('id', 'DESC')->get();
     }
 
     // 自分のtweetかチェックする
