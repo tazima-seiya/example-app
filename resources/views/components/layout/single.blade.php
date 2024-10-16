@@ -14,7 +14,9 @@
                             管理者
                         </x-element.button-a>
                     @else
-                        {{ Request::user()->name }} でログイン中
+                        <div class="justify-start mt-0 text-sm text-gray-600">
+                            {{ Request::user()->name }} でログイン中
+                        </div>
                     @endif
                 </div>
                 <button
