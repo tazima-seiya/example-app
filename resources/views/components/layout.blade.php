@@ -9,6 +9,7 @@
     @vite('resources/css/app.css')
     <title>{{ $title ?? 'つぶやきアプリ' }}</title>
     @stack('css')
+    @stack('css_postForm')
 </head>
 <body class="bg-fixed" style="background-image: url({{ asset('img/bg-cross2.png') }});">
     {{ $slot }}

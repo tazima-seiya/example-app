@@ -1,7 +1,7 @@
 @auth
 <div class="z-10 rounded-md p-4 sticky top-0 max-w-screen-sm w-full bg-gray-50">
     <details class="accordion" open>
-        <summary class="text-gray-700 text-center" style="user-select: none">
+        <summary class="text-gray-700 text-center cursor-pointer" style="user-select: none">
             入力欄
         </summary>
         <form class="accordion-body" action="{{ route('tweet.create') }}" method="post">
@@ -13,10 +13,11 @@
             </div>
             <div class="flex flex-wrap">
                 <p class="mt-2 text-sm text-gray-500">
-                    140文字まで | 現在<span id="count">0</span>文字
+                    <span id="count">0 / 140文字</span>
                 </p>
                 <script type="text/javascript">
                     const maxPostLength = 140;
+                    const text = " / " + maxPostLength + "文字";
                 </script>
                 <script type="text/javascript" src="{{ asset('js/text-count.js') }}"></script>
 
@@ -45,3 +46,29 @@
     </div>
 </div>
 @endguest
+
+@once
+@push('css_postForm')
+<style>
+.accordion > summary {
+    list-style: none;
+}
+
+.accordion > summary::-webkit-details-marker {
+    display: none;
+}
+
+.accordion > summary::before {
+    font-family: FontAwesome;
+    content: '\f067';
+    margin-right: 20px;
+}
+
+.accordion[open] > summary::before {
+    font-family: FontAwesome;
+    content: '\f068';
+    margin-right: 20px;
+}
+</style>
+@endpush
+@endonce
