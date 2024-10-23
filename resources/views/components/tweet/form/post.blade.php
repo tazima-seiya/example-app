@@ -59,14 +59,16 @@
 }
 
 .accordion > summary::before {
-    font-family: FontAwesome;
+    font-family: "Font Awesome 5 Free";
     content: '\f067';
+    font-weight: 900;
     margin-right: 20px;
 }
 
 .accordion[open] > summary::before {
-    font-family: FontAwesome;
+    font-family: "Font Awesome 5 Free";
     content: '\f068';
+    font-weight: 900;
     margin-right: 20px;
 }
 </style>
